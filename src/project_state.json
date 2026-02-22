@@ -1,0 +1,240 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 7,
+  "summary": "A classifieds marketplace website similar to OLX (branded as OLS - On-Line Selling), where users can post and browse listings for buying/selling items with prices in INR, accessible at www.ols.in domain, featuring mobile OTP authentication with high security",
+  "architectural_notes": [
+    "Multi-user marketplace platform with buyer and seller roles",
+    "Image upload and storage capability required for listings",
+    "Search and filtering system for listings",
+    "Mobile OTP authentication system for user login",
+    "Custom domain configuration for www.ols.in",
+    "Currency formatting in INR throughout the application",
+    "Anti-phishing and high security measures implementation"
+  ],
+  "known_issues": [
+    "Website deployment not opening/accessible"
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-implement-user-authentication-using-internet-identity-to-allow-users-to-register-and-log-in-securely",
+      "title": "Implement user authentication using Internet Identity to allow users to register and log in securely",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-listing-creation-form-where-authenticated-users-can-post-new-items-with-title-description-price-category-selection-location-contact-method-phone-or-message-preference-and-upload-multiple-images",
+      "title": "Build listing creation form where authenticated users can post new items with title, description, price, category selection, location, contact method (phone or message preference), and upload multiple images",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-browse-page-displaying-all-active-listings-in-a-grid-layout-with-thumbnail-image-title-price-location-and-posting-date-for-each-listing",
+      "title": "Build browse page displaying all active listings in a grid layout with thumbnail image, title, price, location, and posting date for each listing",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-listing-detail-page-showing-full-information-including-all-images-in-a-gallery-complete-description-seller-contact-information-and-posting-metadata",
+      "title": "Create listing detail page showing full information including all images in a gallery, complete description, seller contact information, and posting metadata",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-category-filter-navigation-allowing-users-to-browse-listings-by-predefined-categories-like-electronics-vehicles-real-estate-furniture-fashion-services-etc",
+      "title": "Implement category filter navigation allowing users to browse listings by predefined categories like Electronics, Vehicles, Real Estate, Furniture, Fashion, Services, etc.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-search-functionality-with-a-search-bar-that-filters-listings-by-keywords-matching-title-description-or-location",
+      "title": "Add search functionality with a search bar that filters listings by keywords matching title, description, or location",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-user-dashboard-showing-authenticated-user-s-own-listings-with-options-to-edit-mark-as-sold-or-delete-each-listing",
+      "title": "Build user dashboard showing authenticated user's own listings with options to edit, mark as sold, or delete each listing",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-location-based-filtering-to-allow-users-to-search-or-browse-listings-by-entering-a-location-or-city-name",
+      "title": "Implement location-based filtering to allow users to search or browse listings by entering a location or city name",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-vibrant-modern-marketplace-theme-with-warm-accent-colors-orange-amber-or-coral-tones-clean-card-based-layouts-and-approachable-typography-that-conveys-trust-and-community-consistently-applied-across-all-pages",
+      "title": "Design a vibrant, modern marketplace theme with warm accent colors (orange, amber, or coral tones), clean card-based layouts, and approachable typography that conveys trust and community, consistently applied across all pages",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-internet-identity-authentication-system-with-mobile-otp-based-authentication-allowing-users-to-register-and-log-in-using-their-mobile-phone-number-with-otp-verification",
+      "title": "Replace Internet Identity authentication system with mobile OTP-based authentication allowing users to register and log in using their mobile phone number with OTP verification",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-all-price-displays-throughout-the-application-to-show-amounts-in-inr-indian-rupees-format-with-symbol-prefix",
+      "title": "Update all price displays throughout the application to show amounts in INR (Indian Rupees) format with ₹ symbol prefix",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-configure-the-application-to-be-accessible-via-the-custom-domain-www-ols-in",
+      "title": "Configure the application to be accessible via the custom domain www.ols.in",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-comprehensive-anti-phishing-security-measures-to-protect-users-from-fraudulent-activities-including-csrf-protection-input-sanitization-secure-session-management-and-user-education-warnings",
+      "title": "Implement comprehensive anti-phishing security measures to protect users from fraudulent activities including CSRF protection, input sanitization, secure session management, and user education warnings",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-application-branding-from-classifieds-hub-to-ols-on-line-selling-throughout-all-pages-headers-and-metadata",
+      "title": "Update application branding from 'Classifieds Hub' to 'OLS' (On-Line Selling) throughout all pages, headers, and metadata",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "User registration and authentication system",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Create and manage product listings with images, descriptions, and prices",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Browse and search listings by category, location, and keywords",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Contact sellers through messaging or phone",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Category organization for different types of products",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Create backend data model for listings with fields: id, title, description, price, category, location, seller principal, images array, contact info, timestamp, and status (active/sold)",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Implement backend endpoints to create new listings, retrieve all active listings, get listings by category, search listings by keywords, get user's own listings, update listing details, and mark listings as sold",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Implement mobile OTP-based authentication instead of Internet Identity for secure login",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Configure custom domain www.ols.in for the marketplace",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Display all prices in INR (Indian Rupees) currency format",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Implement anti-phishing security measures to protect users",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-14",
+      "summary": "Diagnose and fix the deployment configuration preventing the website from loading or being accessible at www.ols.in or the default Internet Computer canister URL",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Verify that the dfx.json configuration correctly defines frontend and backend canisters with proper source directories and build settings",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Ensure frontend build process completes successfully and generates deployable assets in the dist directory",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Verify backend canister deploys successfully with all Motoko code compiling without errors",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Classifieds Hub",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

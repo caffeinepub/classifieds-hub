@@ -1,0 +1,91 @@
+{
+  "kind": "build_request",
+  "title": "Fix website deployment accessibility issue",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-17",
+      "text": "Diagnose and fix the deployment configuration preventing the website from loading or being accessible at www.ols.in or the default Internet Computer canister URL",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ],
+        "quotes": [
+          "Website not openimg"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Website loads successfully when accessed via browser",
+        "Frontend assets are served correctly from the canister",
+        "Backend canister is accessible and responding to queries",
+        "No CORS or network connectivity errors in browser console",
+        "DNS configuration for www.ols.in is properly set up (if custom domain is being used)"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Verify that the dfx.json configuration correctly defines frontend and backend canisters with proper source directories and build settings",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ]
+      },
+      "acceptanceCriteria": [
+        "dfx.json includes both frontend and backend canister definitions",
+        "Frontend canister points to correct dist directory after build",
+        "Backend canister references the correct main.mo file",
+        "Asset canister configuration includes necessary file types (html, css, js, images)"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "text": "Ensure frontend build process completes successfully and generates deployable assets in the dist directory",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ]
+      },
+      "acceptanceCriteria": [
+        "npm run build completes without errors",
+        "dist directory contains index.html, compiled JavaScript bundles, and CSS files",
+        "All imported assets and images are included in build output",
+        "Build process properly handles React Router configuration for single-page application"
+      ]
+    },
+    {
+      "id": "REQ-20",
+      "text": "Verify backend canister deploys successfully with all Motoko code compiling without errors",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-5"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend Motoko code compiles without syntax or type errors",
+        "Canister initialization completes successfully",
+        "All public methods are accessible via Candid interface",
+        "Canister can handle basic queries and updates"
+      ]
+    }
+  ],
+  "constraints": [
+    "Must maintain existing mobile OTP authentication system",
+    "Must preserve all existing listing and user data structures",
+    "Must keep INR currency formatting intact",
+    "Do not modify the single-actor backend architecture"
+  ],
+  "nonGoals": [
+    "Adding new features or functionality",
+    "Changing the UI design or layout",
+    "Modifying authentication flow",
+    "Updating domain configuration beyond fixing deployment issues"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-22T18:17:23.082Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 4,
+    "implemented": 0,
+    "items": [
+      {
+        "id": "REQ-17",
+        "summary": "Diagnose and fix the deployment configuration preventing the website from loading or being accessible at www.ols.in or the default Internet Computer canister URL",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/DEPLOYMENT.md",
+          "frontend/index.html",
+          "frontend/src/utils/config.ts"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-18",
+        "summary": "Verify that the dfx.json configuration correctly defines frontend and backend canisters with proper source directories and build settings",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/DEPLOYMENT.md"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-19",
+        "summary": "Ensure frontend build process completes successfully and generates deployable assets in the dist directory",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/index.html",
+          "frontend/src/main.tsx",
+          "frontend/DEPLOYMENT.md"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-20",
+        "summary": "Verify backend canister deploys successfully with all Motoko code compiling without errors",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

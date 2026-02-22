@@ -1,0 +1,84 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix Website Deployment Accessibility Issue",
+  "requirements": [
+    {
+      "id": "REQ-17",
+      "summary": "Diagnose and fix deployment configuration to make website accessible at www.ols.in or IC canister URL",
+      "acceptanceCriteria": [
+        "Website loads successfully when accessed via browser",
+        "Frontend assets are served correctly from the canister",
+        "Backend canister is accessible and responding to queries",
+        "No CORS or network connectivity errors in browser console",
+        "DNS configuration for www.ols.in is properly set up (if custom domain is being used)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/DEPLOYMENT.md",
+          "operation": "modify",
+          "description": "Update deployment guide with troubleshooting steps for common accessibility issues including DNS verification, canister URL testing, and browser console error diagnosis. Add section on verifying frontend build output and asset serving."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Verify and update base URL configuration and asset paths to ensure proper loading from IC canister. Ensure all favicon and asset references use relative paths compatible with IC asset canister serving."
+        },
+        {
+          "path": "frontend/src/utils/config.ts",
+          "operation": "modify",
+          "description": "Review and update base URL detection logic to handle both local development and production IC canister environments correctly. Ensure proper fallback for different deployment contexts."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Verify dfx.json configuration for correct frontend and backend canister definitions",
+      "acceptanceCriteria": [
+        "dfx.json includes both frontend and backend canister definitions",
+        "Frontend canister points to correct dist directory after build",
+        "Backend canister references the correct main.mo file",
+        "Asset canister configuration includes necessary file types (html, css, js, images)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/DEPLOYMENT.md",
+          "operation": "modify",
+          "description": "Add detailed dfx.json verification checklist covering canister definitions, source directories, asset types configuration, and common misconfigurations that prevent deployment. Include examples of correct dfx.json structure for frontend asset canister."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Ensure frontend build process completes successfully and generates deployable assets",
+      "acceptanceCriteria": [
+        "npm run build completes without errors",
+        "dist directory contains index.html, compiled JavaScript bundles, and CSS files",
+        "All imported assets and images are included in build output",
+        "Build process properly handles React Router configuration for single-page application"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Verify Router configuration is compatible with IC asset canister serving. Ensure basename and routing strategy work correctly when deployed to IC infrastructure without causing 404 errors on page refresh."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Add meta tag for single-page application routing and verify script loading strategy is compatible with IC asset canister. Ensure proper error boundaries are in place for deployment issues."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Add error boundary and fallback UI to catch and display deployment-related initialization errors. Include diagnostic information visible to users if the app fails to load properly."
+        },
+        {
+          "path": "frontend/DEPLOYMENT.md",
+          "operation": "modify",
+          "description": "Add comprehensive build verification section covering npm run build output validation, dist directory structure checks, asset inclusion verification, and common build errors with solutions. Include steps to verify generated images at frontend/public/assets/generated/hero-marketplace.dim_1200x400.png, frontend/public/assets/generated/ols-logo.dim_200x200.png, and frontend/public/assets/generated/placeholder-listing.dim_300x300.png are properly included in build output."
+        }
+      ]
+    }
+  ]
+}
